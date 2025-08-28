@@ -25,17 +25,20 @@ public class Main {
         }
         return "";
     }
-    public static byte deliveryCard(int deliveryDistance){
+    public static int deliveryCard(int deliveryDistance){
         int dase = 1;
         if (deliveryDistance <20){
+
         }else if (deliveryDistance >=20 && deliveryDistance<60){
             dase = dase + 1;
-        }
-        if (deliveryDistance >= 60 && deliveryDistance <=100){
-            dase = (byte) (dase + 1);
+
+        }else if (deliveryDistance >= 60 && deliveryDistance <=100){
+            dase = dase + 1;
+
         }else if (deliveryDistance > 100){
-            System.out.printf(" К сожалению мы не сможем доставить вам карту");
+            System.out.println(" К сожалению мы не сможем доставить вам карту");
         }
+        System.out.println(" На доставку карты понадобится дней : " + dase);
         return (byte) dase;
     }
     public static void main(String[] args) {
@@ -51,6 +54,5 @@ public class Main {
         deliveryCard(deliveryDistance);
 
         int dase = deliveryCard(deliveryDistance);
-        System.out.printf(" На доставку карты понадобится дней : " + dase);
     }
 }
